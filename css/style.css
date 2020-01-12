@@ -1,0 +1,171 @@
+body {
+    margin:auto;
+    background:#fff;
+    font-family: 'Quicksand', sans-serif;
+}
+
+img{
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+hr{
+    border-bottom:none;
+}
+
+.site-flex{
+    display:flex;
+}
+
+.site-flex > div{
+
+}
+
+.menu{
+    background:#E5EDE9;
+    padding:25px;
+    display:none;
+    width:50%;
+    max-width:250px;
+}
+
+.site-content{
+    width:100%;
+}
+
+.nav-section{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   /* z-index:2;*/
+    /*background:url("https://payload.cargocollective.com/1/0/5395/8999754/Launch-12-3-2014-copy_1000.jpg");*/
+    position:relative;
+    border-radius:0 0 25px 25px;
+}
+
+.fa-crosshairs:hover{
+    cursor:pointer;
+}
+
+.site-title{
+    font-family: 'Raleway', sans-serif;
+    font-size:32px;
+    padding:15px;
+    color:#e95785;
+}
+
+.site-title-letters:hover{
+    cursor:grab;
+}
+
+.site-title-letters:active{
+    cursor:grabbing;
+}
+
+.forground-image{
+    border-radius:0 0 25px 25px;
+    width:100%;
+}
+
+.search-section{
+    padding:25px 0;      
+}
+
+.search-flex{
+    display:flex;
+    max-width:80%;
+    border-radius:25px;
+    margin:auto;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    max-height:33px;
+}
+
+.fa-search{
+    background:#48ab46;
+    color:#fff;
+    padding:8px 10px 8px 10px;
+    border-radius:25px 0 0 25px;
+}
+
+.search-bar{
+    width:100%;
+}
+
+input{
+    padding:5px 0;
+    outline:none;
+}
+
+input::placeholder{
+    color:#fff;
+}
+
+.search-input{
+    width:100%;
+    border:none;
+    background:#48ab46;
+    font-size:24px;
+    color:#fff;
+    border-radius:0 25px 25px 0;
+}
+
+.sections{
+    width:90%;
+    margin:auto;
+}
+
+.section-title{
+    font-size:30px;
+    padding:12px;
+    width:100%;
+    margin:auto;
+    text-align:left;
+}
+
+.section-flex{
+    display:flex;
+    max-width:100%;
+    margin:auto;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.section-flex > div{
+    width:100%;
+    flex: 0 45%;
+}
+
+.mdc-section{
+    padding:10px;    
+}
+
+.mdc-card{
+    border-radius:25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.mdc-image{
+    width:100%; 
+    border-radius:25px 25px 0 0;
+}
+
+.mdc-inner-card{
+    padding:16px;
+}
+
+.action-button-flex{
+    display:flex;
+}
+
+@media only screen and (max-width: 486px) {
+    .section-flex > div{
+        flex: 0 100%;
+    }
+    .fa-search{
+        font-size:22px;
+    }
+}
