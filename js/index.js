@@ -154,3 +154,21 @@ function generateContent() {
         '</div>').appendTo('#resources');
     }
 };
+
+function backToHome(){
+    $('<div id="backHome">Back to Home</div>').appendTo();
+}
+
+function loadAllCategories(){
+    $('#backHome').click(function() {
+        generateContent();
+    })
+}
+
+function generateHTMLPager(){
+    $('#homePager').click(function(){
+        $('#languageTitle').empty();
+        $('#languages').empty();
+    });
+    backToHome();
+}
