@@ -166,7 +166,7 @@ function loadAllCategories(){
 }
 
 function generateHTMLPager(){
-    $('#homePager').click(function(){
+    $('#htmlPager').click(function(){
         $('#languageTitle').empty();
         $('#languages').empty();
     });
