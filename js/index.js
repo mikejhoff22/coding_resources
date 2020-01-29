@@ -7,6 +7,8 @@ let defaultImage = 'https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-
 //Languages Arrays
 //Language Images
 let languageImages = [defaultImage, defaultImage, defaultImage, defaultImage, defaultImage, defaultImage];
+//Language IDs
+let languageID = ['htmlPager', 'cssPager', 'jsPager', 'phpPager', 'rubyPager', 'pythonPager'];
 //Language Card Title
 let langCardTitle = ['HTML', 'CSS', 'Javascript', 'php', 'Ruby', 'Python'];
 //Language Card Secondary Text, Source COde Link
@@ -67,84 +69,88 @@ $(document).ready(function() {
             iconSpin--;
         }
     });
-    //Generate Languages, Frameworks, Libraries, Resources
-    $( function() {
-        $('#languageTitle').text('Languages');
-        for(var i=0; i < 6; i++){
-           $('<div class="mdc-section">' +
-                '<div class="mdc-card">' +
-                    '<div>' +
-                        '<img src="' + languageImages[i] + '" class="mdc-image">' +
-                    '</div>' +
-                    '<div class="mdc-inner-card">' +
-                        '<div>' + langCardTitle[i] + '</div>' +
-                        '<div><a href="' + langCardST[i] + '" target="_blank">Source Code</a></div>' +
-                        '<div>' + langCardDesc[i] + '</div>' +
-                        '<div class="action-button-flex">' +
-                            '<div></div>' +
-                            '<div></div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-            '</div>').appendTo('#languages');
-        }
-        $('#frameworkTitle').text('Frameworks');
-        for(var i=0; i < 6; i++){
-           $('<div class="mdc-section">' +
-                '<div class="mdc-card">' +
-                    '<div>' +
-                        '<img src="' + frameworkImages[i] + '" class="mdc-image">' +
-                    '</div>' +
-                    '<div class="mdc-inner-card">' +
-                        '<div>' + frameCardTitle[i] + '</div>' +
-                        '<div><a href="' + frameCardST[i] + '" target="_blank">Source Code</a></div>' +
-                        '<div>' + frameCardDesc[i] + '</div>' +
-                        '<div class="action-button-flex">' +
-                            '<div></div>' +
-                            '<div></div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-            '</div>').appendTo('#frameworks');
-        }
-        $('#libraryTitle').text('Libraries');
-        for(var i=0; i < 6; i++){
-           $('<div class="mdc-section">' +
-                '<div class="mdc-card">' +
-                    '<div>' +
-                        '<img src="' + libraryImages[i] + '" class="mdc-image">' +
-                    '</div>' +
-                    '<div class="mdc-inner-card">' +
-                        '<div>' + libCardTitle[i] + '</div>' +
-                        '<div><a href="' + libCardST[i] + '" target="_blank">Source Code</a></div>' +
-                        '<div>' + libCardDesc[i] + '</div>' +
-                        '<div class="action-button-flex">' +
-                            '<div></div>' +
-                            '<div></div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-            '</div>').appendTo('#libraries');
-        }
-        $('#resourceTitle').text('Resources');
-        for(var i=0; i < 6; i++){
-           $('<div class="mdc-section">' +
-                '<div class="mdc-card">' +
-                    '<div>' +
-                        '<img src="' + resourceImages[i] + '" class="mdc-image">' +
-                    '</div>' +
-                    '<div class="mdc-inner-card">' +
-                        '<div>' + resoCardTitle[i] + '</div>' +
-                        '<div><a href="' + resoCardST[i] + '" target="_blank">Source Code</a></div>' +
-                        '<div>' + resoCardDesc[i] + '</div>' +
-                        '<div class="action-button-flex">' +
-                            '<div></div>' +
-                            '<div></div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-            '</div>').appendTo('#resources');
-        }
-    });
+    
+    generateContent();
+
+
 });
 
+//Generate Languages, Frameworks, Libraries, Resources
+function generateContent() {
+    $('#languageTitle').text('Languages');
+    for(var i=0; i < 6; i++){
+       $('<div class="mdc-section" id="' + languageID[i] + '">' +
+            '<div class="mdc-card">' +
+                '<div>' +
+                    '<img src="' + languageImages[i] + '" class="mdc-image">' +
+                '</div>' +
+                '<div class="mdc-inner-card">' +
+                    '<div>' + langCardTitle[i] + '</div>' +
+                    '<div><a href="' + langCardST[i] + '" target="_blank">Source Code</a></div>' +
+                    '<div>' + langCardDesc[i] + '</div>' +
+                    '<div class="action-button-flex">' +
+                        '<div></div>' +
+                        '<div></div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>').appendTo('#languages');
+    }
+    $('#frameworkTitle').text('Frameworks');
+    for(var i=0; i < 6; i++){
+       $('<div class="mdc-section">' +
+            '<div class="mdc-card">' +
+                '<div>' +
+                    '<img src="' + frameworkImages[i] + '" class="mdc-image">' +
+                '</div>' +
+                '<div class="mdc-inner-card">' +
+                    '<div>' + frameCardTitle[i] + '</div>' +
+                    '<div><a href="' + frameCardST[i] + '" target="_blank">Source Code</a></div>' +
+                    '<div>' + frameCardDesc[i] + '</div>' +
+                    '<div class="action-button-flex">' +
+                        '<div></div>' +
+                        '<div></div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>').appendTo('#frameworks');
+    }
+    $('#libraryTitle').text('Libraries');
+    for(var i=0; i < 6; i++){
+       $('<div class="mdc-section">' +
+            '<div class="mdc-card">' +
+                '<div>' +
+                    '<img src="' + libraryImages[i] + '" class="mdc-image">' +
+                '</div>' +
+                '<div class="mdc-inner-card">' +
+                    '<div>' + libCardTitle[i] + '</div>' +
+                    '<div><a href="' + libCardST[i] + '" target="_blank">Source Code</a></div>' +
+                    '<div>' + libCardDesc[i] + '</div>' +
+                    '<div class="action-button-flex">' +
+                        '<div></div>' +
+                        '<div></div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>').appendTo('#libraries');
+    }
+    $('#resourceTitle').text('Resources');
+    for(var i=0; i < 6; i++){
+       $('<div class="mdc-section">' +
+            '<div class="mdc-card">' +
+                '<div>' +
+                    '<img src="' + resourceImages[i] + '" class="mdc-image">' +
+                '</div>' +
+                '<div class="mdc-inner-card">' +
+                    '<div>' + resoCardTitle[i] + '</div>' +
+                    '<div><a href="' + resoCardST[i] + '" target="_blank">Source Code</a></div>' +
+                    '<div>' + resoCardDesc[i] + '</div>' +
+                    '<div class="action-button-flex">' +
+                        '<div></div>' +
+                        '<div></div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>').appendTo('#resources');
+    }
+};
