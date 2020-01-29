@@ -46,6 +46,55 @@ let resoCardST = ['https://trianglify.io/', 'https://material.io/', 'https://fon
 //Framework Card Supporting Text, Description
 let resoCardDesc = ['', '', '', '', '', ''];
 
+function emptier(){
+    $('#languageTitle').empty();
+    $('#languages').empty();
+    $('#frameworkTitle').empty();
+    $('#frameworks').empty();
+    $('#libraryTitle').empty();
+    $('#libraries').empty();
+    $('#resourceTitle').empty();
+    $('#resources').empty();
+}
+
+function emptyCategories() {
+    $('#htmlPager').click(function() {
+        emptier();
+        backToHome();
+    });
+    $('#cssPager').click(function() {
+        emptier();
+        backToHome();
+    });
+    $('#jsPager').click(function() {
+        emptier();
+        backToHome();
+    });
+    $('#phpPager').click(function() {
+        emptier();
+        backToHome();
+    });
+    $('#rubyPager').click(function() {
+        emptier();
+        backToHome();
+    });
+    $('#pythonPager').click(function() {
+        emptier();
+        backToHome();
+    });
+};
+
+function backToHome(){
+    $('<div id="backHome">Back to Home</div>').appendTo('#languageTitle');
+    $('#backHome').click(function() {
+        generateContent();
+    })
+}
+
+function loadAllCategories(){
+    
+}
+
 $(document).ready(function() {
     
     
@@ -72,20 +121,21 @@ $(document).ready(function() {
     
     generateContent();
 
-
+    emptyCategories();
+    
 });
 
 //Generate Languages, Frameworks, Libraries, Resources
 function generateContent() {
     $('#languageTitle').text('Languages');
     for(var i=0; i < 6; i++){
-       $('<div class="mdc-section" id="' + languageID[i] + '">' +
+       $('<div class="mdc-section">' +
             '<div class="mdc-card">' +
                 '<div>' +
                     '<img src="' + languageImages[i] + '" class="mdc-image">' +
                 '</div>' +
                 '<div class="mdc-inner-card">' +
-                    '<div>' + langCardTitle[i] + '</div>' +
+                    '<div id=' + languageID[i] + '>' + langCardTitle[i] + '</div>' +
                     '<div><a href="' + langCardST[i] + '" target="_blank">Source Code</a></div>' +
                     '<div>' + langCardDesc[i] + '</div>' +
                     '<div class="action-button-flex">' +
@@ -153,22 +203,12 @@ function generateContent() {
             '</div>' +
         '</div>').appendTo('#resources');
     }
+
+    emptyCategories();
+    
 };
 
-function backToHome(){
-    $('<div id="backHome">Back to Home</div>').appendTo();
-}
 
-function loadAllCategories(){
-    $('#backHome').click(function() {
-        generateContent();
-    })
-}
 
-function generateHTMLPager(){
-    $('#htmlPager').click(function(){
-        $('#languageTitle').empty();
-        $('#languages').empty();
-    });
-    backToHome();
-}
+    
+    
